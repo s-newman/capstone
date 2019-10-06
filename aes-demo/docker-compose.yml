@@ -1,0 +1,9 @@
+version: '3'
+services:
+  builder:
+    build: .
+    image: aes
+    volumes:
+      - "./src:/code"
+    working_dir: /code/firmware/simpleserial-aes
+    command: make PLATFORM=CWLITEXMEGA CRYPTO_TARGET=AVRCRYPTOLIB
