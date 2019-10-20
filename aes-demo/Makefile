@@ -46,8 +46,7 @@ CRYPTO_OPTIONS = AES128C
 endif
 
 #Add simpleserial project to build
-include ../simpleserial/Makefile.simpleserial
+include include/firmware/simpleserial/Makefile.simpleserial
 
-FIRMWAREPATH = ../.
+FIRMWAREPATH=include/firmware
 include $(FIRMWAREPATH)/Makefile.inc
-
