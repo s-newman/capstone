@@ -1,3 +1,6 @@
+# Editor settings
+.vscode/
+
 # Chipwhisperer ignores
 *.elf
 *.eep
