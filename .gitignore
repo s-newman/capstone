@@ -1,3 +1,12 @@
+# Chipwhisperer ignores
+*.elf
+*.eep
+*.hex
+*.lss
+*.map
+*.sym
+**/objdir/
+
 # Prerequisites
 *.d
 
