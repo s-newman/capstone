@@ -1,0 +1,9 @@
+version: '3'
+services:
+  builder:
+    build: .
+    image: aes
+    volumes:
+      - ".:/code"
+    working_dir: /code/
+    command: make PLATFORM=CWLITEXMEGA CRYPTO_TARGET=NONE
