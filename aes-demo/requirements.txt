@@ -1,2 +1,0 @@
-chipwhisperer
-numpy
