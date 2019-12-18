@@ -31,8 +31,6 @@ SBOX = [
 ]
 # fmt: on
 
-KEY = [43, 126, 21, 22, 40, 174, 210, 166, 171, 247, 21, 136, 9, 207, 79, 60]
-
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -56,7 +54,6 @@ def load_traces(filename):
             traces = json.load(tracefile)
 
     return (
-        KEY,
         traces["traces"],
         traces["plaintexts"],
     )
@@ -128,10 +125,8 @@ def get_key(processes, traces, plaintexts):
 def main():
     args = parse_args()
     # Load the traces
-    key, traces, plaintexts = load_traces(args.zipfile)
-    print(f'Actual key:   {["0x%02x" % x for x in key]}')
+    traces, plaintexts = load_traces(args.zipfile)
     get_key(args.processes, traces, plaintexts)
-    print(f'Actual key:   {["0x%02x" % x for x in key]}')
 
 
 if __name__ == "__main__":
