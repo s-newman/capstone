@@ -12,12 +12,14 @@ FIRMWARE_PATH = "simpleserial-aes-CWLITEXMEGA.hex"
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        '-o', '--output',
-        help="The name of the zipfile to write the traces to. Defaults to 'traces.zip'.",
-        default='traces.zip',
+        "-o",
+        "--output",
+        help="The name of the zipfile to write traces to. Defaults to 'traces.zip'.",
+        default="traces.zip",
     )
     parser.add_argument(
-        '-t', '--traces',
+        "-t",
+        "--traces",
         type=int,
         help="The number of traces to capture. Defaults to 5000.",
         default=5000,
@@ -77,13 +79,13 @@ def main():
 
     # Save to json in zip
     with ZipFile(args.output, "w") as zipfile:
-        with zipfile.open('traces.json', 'w') as tracefile:
+        with zipfile.open("traces.json", "w") as tracefile:
             traces = {
-                'traces': trace_array,
-                'plaintexts': plaintext_array,
+                "traces": trace_array,
+                "plaintexts": plaintext_array,
             }
             json.dump(tracefile)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
